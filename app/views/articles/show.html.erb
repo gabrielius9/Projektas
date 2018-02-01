@@ -1,10 +1,15 @@
-<h1>Article</h1>
+<h2 align="center">Pavadinimas: <%= @article.title %></h2>
+<div class="well col-xs-8 col-xs-offset-2">
+  <h4 class="center description">
+    <strong>
+      Tekstas:
+    </strong>
+  </h4>
+  <%= simple_format(@article.description) %>
+  <div class="article-actions">
+    <%= link_to "Redaguoti", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+    <%= link_to "Ištrinti", article_path(@article), method: :delete, data: {confirm: "Ar tikrai norite ištrinti?"}, class: "btn btn-xs btn-danger" %>
+    <%= link_to "Peržiūrėti visus", articles_path, class:"btn btn-xs btn-success" %>
+  </div>
+</div>
 
-<p>
-  Title: <%= @article.title %>
-</p>
-<p>
-  Description: <%= @article.description %>
-</p>
-<%= link_to "Edit this article", edit_article_path(@article) %> |
-<%= link_to "Back to list", articles_path %>
