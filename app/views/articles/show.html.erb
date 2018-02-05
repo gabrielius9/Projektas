@@ -1,8 +1,7 @@
-<h2 align="center">Pavadinimas: <%= @article.title %></h2>
 <div class="well col-xs-8 col-xs-offset-2">
   <h4 class="center description">
     <strong>
-      Tekstas:
+      <%= @article.title %>
     </strong>
   </h4>
   <%= simple_format(@article.description) %>
